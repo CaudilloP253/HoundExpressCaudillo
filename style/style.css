@@ -1,0 +1,68 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.logo {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: 6rem;
+}
+
+table, th, td {
+  border: 3px solid rgb(106, 198, 222);
+  text-align: center;
+  vertical-align: middle;
+  height: 35px;
+}
+
+input table {
+  padding: 1% 1%;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 10px; /* Adjust the radius as needed */
+  border-collapse: separate; /* Important: ensures corners are visible */
+  overflow: hidden; /* Clips internal content to the rounded border */
+  border-spacing: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header section {
+  border-radius: 50px;
+  background-color: rgb(106, 198, 222);
+  width: 75%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+header section a {
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(9, 30, 63);
+}
+
+#formWaybill form {
+  display: grid;
+}
+#formWaybill form input, #formWaybill form option {
+  text-align: center;
+}
+
+hr {
+  border-style: groove;
+  color: rgb(9, 30, 63);
+}
+
+footer {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */

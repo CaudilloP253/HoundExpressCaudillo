@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hound Express</title>
+    <link rel="stylesheet" type="text/css" href="/style/style.css"/>
+    <script src="/Caudillo-HQ - dom/js/index.js" defer ></script>
+</head>
+<body>
+    <header>
+        <img class="logo" id="light-logo"src="/multimedia/logo-Hound_Express-bg-white.png" alt="Hound Express Logo">
+        <section>
+          <a href="">INICIO</a>
+          <a href="#formWaybill">REGISTRO DE GUIAS</a>
+          <a href="#genState">ESTADO GENERAL</a>
+          <a href="#wbList">LISTA DE GUIAS</a>
+          <a href="#wbSearch">BUSCAR GUIAS</a>
+          <a href="#wbRecord">HISTORIAL DE GUIAS</a>
+        </section>
+      </header>
+    <br>
+    <main>
+        <section id="formWaybill">
+          <h2>Registro de Guías</h2>
+            <form action="/submit-form" method="post">
+
+              <label for="wbNumber">Número de guía</label>
+              <input type="number" id="wbNumber" name="wbNumber" placeholder="Ingresa tu Número de Guía">
+
+              <label for="origin">Origen</label>
+              <input type="text" id="origin" name="origin" placeholder="Ingresa Origen del paquete">
+
+              <label for="destiny">Destino</label>
+              <input type="text" id="destiny" name="destiny" placeholder="Ingrese el Destino del paquete">
+
+              <label for="createDate">Fecha de creación</label>
+              <input type="date" id="createDate" placeholder="Ingresa la Fecha de creación">
+
+              <label for="pkStatus">Estado de paquete inicial</label>
+              <select id="pkStatus">
+                  <option value="pending" selected>Pendiente</option>
+                  <option value="awaiting">En tránsito</option>
+                  <option value="delivered">Entregado</option>
+              </select>
+              <input type="submit" value="Submit">
+            </form>
+        </section>
+        <section id="genState">
+          <h2>Estado General de Guías</h2>
+            <div>Guías Activas Totales</div>
+            <div>Guías en Transito</div>
+            <div>Guías Entregadas</div>
+        </section>
+        <section id="wbList">
+            <h2>Lista de Guías</h2>
+            <table>
+  <thead>
+    <tr>
+      <th>Número de Guía</th>
+      <th>Estado Actual</th>
+      <th>Origen</th>
+      <th>Destino</th>
+      <th>Fecha de última actualización</th>
+      <th>Actualizar Estado</th>
+      <th>Historial</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>30</td>
+      <td>New York</td>
+      <td></td>
+      <td></td>
+      <td><input type="submit" value="Actualizar"></td>
+      <td><input type="submit" value="Historial"></td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>24</td>
+      <td>London</td>
+      <td></td>
+      <td></td>
+      <td><input type="submit" value="Actualizar"></td>
+      <td><input type="submit" value="Historial"></td>
+    </tr>
+    <tr>
+      <td>Charlie</td>
+      <td>35</td>
+      <td>Paris</td>
+      <td></td>
+      <td></td>
+      <td><input type="submit" value="Actualizar"></td>
+      <td><input type="submit" value="Historial"></td>
+    </tr>
+      <tr>
+      <td>Alice</td>
+      <td>30</td>
+      <td>New York</td>
+      <td></td>
+      <td></td>
+      <td><input type="submit" value="Actualizar"></td>
+      <td><input type="submit" value="Historial"></td>
+    </tr>  <tr>
+      <td>Alice</td>
+      <td>30</td>
+      <td>New York</td>
+      <td></td>
+      <td></td>
+      <td><input type="submit" value="Actualizar"></td>
+      <td><input type="submit" value="Historial"></td>
+    </tr>  <tr>
+      <td>Alice</td>
+      <td>30</td>
+      <td>New York</td>
+      <td></td>
+      <td></td>
+      <td><input type="submit" value="Actualizar"></td>
+      <td><input type="submit" value="Historial"></td>
+    </tr>  <tr>
+      <td>Alice</td>
+      <td>30</td>
+      <td>New York</td>
+      <td></td>
+      <td></td>
+      <td><input type="submit" value="Actualizar"></td>
+      <td><input type="submit" value="Historial"></td>
+    </tr>
+  </tbody>
+</table>
+        </section>
+        <section id="wbSearch">
+            <h2>Búsqueda de Guías</h2>
+            <label for="wbNumber">Número de guía</label>
+            <input type="number" id="wbNumber" name="wbNumber" placeholder="Ingresa tu Número de Guía">
+            <input type="button" value="BUSCAR">
+        </section>
+        <section id="wbRecord">
+
+        </section>
+
+    </main>
+</body>
+<hr>
+<footer>
+  <div>
+    <a href="">DERECHOS DE AUTOR</a><br>
+    <a href="">TERMINOS Y CONDICIONES</a><br>
+    <a href="">CONTACTANOS</a><br>
+    <a href="">BOLSA DE TRABAJO</a>
+    
+  </div>
+    </footer>
+</html>

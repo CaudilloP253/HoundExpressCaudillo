@@ -1,0 +1,53 @@
+@use "_variables";
+
+@media(max-width:991px) {
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+    div, label{
+        margin: 10px;
+    }
+}
+
+@media (min-width: 992px){
+    header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     section{
+    border-radius: 50px;
+    background-color: variables.$light-mode;
+    width: 90%;
+    height: 6rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 10px;
+    a {
+        margin: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: variables.$dark-mode;
+    }
+}}
+}
+
+@media (prefers-color-scheme: light) {
+    .logo {
+        max-width: fit-content;
+        max-height: 7rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: rgb(0, 0, 0);
+        color: #fff;
+    }
+    .logo {
+        max-width: fit-content;
+        max-height: 7rem;
+        background-color: #000000;
+    }
+}

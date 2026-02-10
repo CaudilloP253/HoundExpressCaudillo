@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/style/main.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/Caudillo-HQ - dom/js/index.js" defer ></script>
+    <script src="/javascript/index.js" defer ></script>
 </head>
 <body>
     <header>
@@ -23,7 +23,7 @@
       <a href="#genState" class="mx-3">ESTADO GENERAL</a>
       <a href="#wbList" class="mx-3">LISTA DE GUIAS</a>
       <a href="#wbSearch" class="mx-3">BUSCAR GUIAS</a>
-      <a href="#wbRecord" class="mx-3">HISTORIAL DE GUIAS</a>
+      <!--<a href="#wbRecord" class="mx-3">HISTORIAL DE GUIAS</a>-->
     </div>
   </section>
       <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none">
@@ -44,7 +44,7 @@
               <a class="nav-link" href="#genState">ESTADO GENERAL</a>
               <a class="nav-link" href="#wbList">LISTA DE GUIAS</a>
               <a class="nav-link" href="#wbSearch">BUSCAR GUIAS</a>
-              <a class="nav-link" href="#wbRecord">HISTORIAL DE GUIAS</a>
+              <!-- <a class="nav-link" href="#wbRecord">HISTORIAL DE GUIAS</a> -->
               </div>
           </div>
         </div>
@@ -52,9 +52,9 @@
     </header>
     <br>
     <main>
-        <section id="formWaybill">
+        <section>
           <h2>Registro de Guías</h2>
-            <form action="/submit-form" method="post">
+            <form id="formWaybill">
 
               <label for="wbNumber">Número de guía</label>
               <input type="number" id="wbNumber" name="wbNumber" placeholder="Ingresa tu Número de Guía">
@@ -66,111 +66,57 @@
               <input type="text" id="destiny" name="destiny" placeholder="Ingrese el Destino del paquete">
 
               <label for="createDate">Fecha de creación</label>
-              <input type="date" id="createDate" placeholder="Ingresa la Fecha de creación">
+              <input type="date" id="createDate" name="createDate" placeholder="Ingresa la Fecha de creación">
 
               <label for="pkStatus">Estado de paquete inicial</label>
-              <select id="pkStatus">
+              <select id="pkStatus" name="pkStatus">
                   <option value="pending" selected>Pendiente</option>
                   <option value="awaiting">En tránsito</option>
                   <option value="delivered">Entregado</option>
               </select><br>
+              <p class="error text-danger" id="errorMsg"></p>
               <input type="submit" value="Submit">
             </form>
         </section>
         <section id="genState">
           <h2>Estado General de Guías</h2>
-            <div>Guías Activas Totales</div>
-            <div>Guías en Transito</div>
-            <div>Guías Entregadas</div>
+          <p>Pendientes:<span id="countPending"> 0</span></p>
+          <p>En tránsito: <span id="countTransit"> 0</span></p>
+          <p>Entregadas: <span id="countDelivered"> 0</span></p>
         </section>
         <section id="wbList">
             <h2>Lista de Guías</h2>
             <table>
-  <thead>
-    <tr>
-      <th>Número de Guía</th>
-      <th>Estado Actual</th>
-      <th>Origen</th>
-      <th>Destino</th>
-      <th>Fecha de última actualización</th>
-      <th>Actualizar Estado</th>
-      <th>Historial</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>30</td>
-      <td>New York</td>
-      <td></td>
-      <td></td>
-      <td><input type="submit" value="Actualizar"></td>
-      <td><input type="submit" value="Historial"></td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>24</td>
-      <td>London</td>
-      <td></td>
-      <td></td>
-      <td><input type="submit" value="Actualizar"></td>
-      <td><input type="submit" value="Historial"></td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>35</td>
-      <td>Paris</td>
-      <td></td>
-      <td></td>
-      <td><input type="submit" value="Actualizar"></td>
-      <td><input type="submit" value="Historial"></td>
-    </tr>
-      <tr>
-      <td>Alice</td>
-      <td>30</td>
-      <td>New York</td>
-      <td></td>
-      <td></td>
-      <td><input type="submit" value="Actualizar"></td>
-      <td><input type="submit" value="Historial"></td>
-    </tr>  <tr>
-      <td>Alice</td>
-      <td>30</td>
-      <td>New York</td>
-      <td></td>
-      <td></td>
-      <td><input type="submit" value="Actualizar"></td>
-      <td><input type="submit" value="Historial"></td>
-    </tr>  <tr>
-      <td>Alice</td>
-      <td>30</td>
-      <td>New York</td>
-      <td></td>
-      <td></td>
-      <td><input type="submit" value="Actualizar"></td>
-      <td><input type="submit" value="Historial"></td>
-    </tr>  <tr>
-      <td>Alice</td>
-      <td>30</td>
-      <td>New York</td>
-      <td></td>
-      <td></td>
-      <td><input type="submit" value="Actualizar"></td>
-      <td><input type="submit" value="Historial"></td>
-    </tr>
-  </tbody>
-</table>
-        </section>
-        <section id="wbSearch">
-            <h2>Búsqueda de Guías</h2>
-            <label for="wbNumber">Número de guía</label>
-            <input type="number" id="wbNumber" name="wbNumber" placeholder="Ingresa tu Número de Guía">
-            <input type="button" value="BUSCAR">
+              <thead>
+                <tr>
+                  <th>Número de Guía</th>
+                  <th>Estado Actual</th>
+                  <th>Origen</th>
+                  <th>Destino</th>
+                  <th>Fecha de última actualización</th>
+                  <th>Actualizar Estado</th>
+                  <th>Historial</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
         </section>
         <section id="wbRecord">
-
+          <div id="historyModal" hidden>
+            <h3>Historial de la guía</h3>
+            <ul id="historyList"></ul>
+            <button onclick="closeHistory()">Cerrar</button>
+          </div>
         </section>
-
+        <section id="wbSearch">
+          <h2>Búsqueda de Guías</h2>
+          <label for="wbSearchNumber">Número de guía</label>
+          <input type="number" id="wbSearchNumber" placeholder="Ingresa tu Número de Guía">
+          <button id="searchBtn" class="btn btn-primary btn-sm">BUSCAR</button>
+          <p class="text-danger" id="searchError"></p>
+          <div id="searchResult"></div>
+        </section>
     </main>
 <hr>
 <footer>
